@@ -11,3 +11,230 @@ color = Color( 0.0117647, 0, 0.0431373, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HUD" type="Node2D" parent="."]
+
+[node name="Info Section" type="Node2D" parent="HUD"]
+
+[node name="PrimaryCurrency" type="Node2D" parent="HUD/Info Section"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/PrimaryCurrency"]
+anchor_right = 0.136
+anchor_bottom = 0.531
+margin_left = 768.0
+margin_top = 16.0
+margin_right = 1008.0
+margin_bottom = 48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SecondaryCurrency" type="Node2D" parent="HUD/Info Section"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/SecondaryCurrency"]
+anchor_right = 0.136
+anchor_bottom = 0.531
+margin_left = 800.0
+margin_top = 64.0
+margin_right = 1008.0
+margin_bottom = 96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="ColorRect" parent="HUD/Info Section/SecondaryCurrency"]
+anchor_right = 0.136
+anchor_bottom = 0.531
+margin_left = 792.0
+margin_top = 72.0
+margin_right = 808.0
+margin_bottom = 88.0
+color = Color( 0.411765, 0.411765, 0.411765, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Val1" type="Node2D" parent="HUD/Info Section"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/Val1"]
+anchor_right = 0.136
+anchor_bottom = 0.531
+margin_left = 976.0
+margin_top = 112.0
+margin_right = 1008.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Val2" type="Node2D" parent="HUD/Info Section"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/Val2"]
+anchor_right = 0.136
+anchor_bottom = 0.531
+margin_left = 832.0
+margin_top = 112.0
+margin_right = 864.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Val3" type="Node2D" parent="HUD/Info Section"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/Val3"]
+anchor_right = 0.136
+anchor_bottom = 0.531
+margin_left = 880.0
+margin_top = 112.0
+margin_right = 912.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Val4" type="Node2D" parent="HUD/Info Section"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/Val4"]
+anchor_right = 0.136
+anchor_bottom = 0.531
+margin_left = 928.0
+margin_top = 112.0
+margin_right = 960.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalFuel" type="Node2D" parent="HUD/Info Section"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/TotalFuel"]
+anchor_right = 0.136
+anchor_bottom = 0.531
+margin_left = 864.0
+margin_top = 160.0
+margin_right = 1008.0
+margin_bottom = 192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="ColorRect" parent="HUD/Info Section/TotalFuel"]
+anchor_right = 0.136
+anchor_bottom = 0.531
+margin_left = 856.0
+margin_top = 168.0
+margin_right = 872.0
+margin_bottom = 184.0
+color = Color( 0.411765, 0.411765, 0.411765, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExpBar" type="Node2D" parent="HUD/Info Section"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/ExpBar"]
+anchor_right = 0.136
+anchor_bottom = 0.531
+margin_left = 152.0
+margin_top = 552.0
+margin_right = 872.0
+margin_bottom = 576.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="HUD/Info Section/ExpBar"]
+position = Vector2( 485.333, 520 )
+scale = Vector2( 0.416667, 0.5 )
+polygon = PoolVector2Array( 0, 0, 60, 0, 128, 0, 160, 64, -32, 64 )
+
+[node name="SystemBar" type="Node2D" parent="HUD/Info Section"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/SystemBar"]
+margin_left = 312.0
+margin_top = 16.0
+margin_right = 712.0
+margin_bottom = 56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Node2D" parent="HUD"]
+
+[node name="Multiplayer" type="Node2D" parent="HUD/Buttons"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Buttons/Multiplayer"]
+margin_left = 880.0
+margin_top = 352.0
+margin_right = 1024.0
+margin_bottom = 456.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShieldStatus" type="ColorRect" parent="HUD/Buttons/Multiplayer"]
+anchor_right = 0.898
+margin_left = 872.0
+margin_top = 344.0
+margin_right = 920.0
+margin_bottom = 384.0
+color = Color( 0.815686, 0.815686, 0.815686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SystemView" type="Node2D" parent="HUD/Buttons"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Buttons/SystemView"]
+margin_left = 880.0
+margin_top = 472.0
+margin_right = 1024.0
+margin_bottom = 576.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShipOverview" type="Node2D" parent="HUD/Buttons"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Buttons/ShipOverview"]
+margin_top = 472.0
+margin_right = 144.0
+margin_bottom = 576.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShieldStatus" type="ColorRect" parent="HUD/Buttons/ShipOverview"]
+anchor_right = 0.898
+margin_left = 104.0
+margin_top = 464.0
+margin_right = 152.0
+margin_bottom = 504.0
+color = Color( 0.815686, 0.815686, 0.815686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bounties" type="Node2D" parent="HUD"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Bounties"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 192.0
+margin_bottom = 152.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="ColorRect" parent="HUD/Bounties"]
+anchor_right = 0.136
+anchor_bottom = 0.531
+margin_left = 184.0
+margin_top = 144.0
+margin_right = 200.0
+margin_bottom = 160.0
+color = Color( 0.411765, 0.411765, 0.411765, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
