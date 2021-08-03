@@ -1,6 +1,14 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="Game" type="Node2D"]
+[ext_resource path="res://src/Scripts/Game.gd" type="Script" id=1]
+
+[node name="Game" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -14,11 +22,11 @@ __meta__ = {
 
 [node name="HUD" type="Node2D" parent="."]
 
-[node name="Info Section" type="Node2D" parent="HUD"]
+[node name="InfoSection" type="Node2D" parent="HUD"]
 
-[node name="PrimaryCurrency" type="Node2D" parent="HUD/Info Section"]
+[node name="PrimaryCurrency" type="Node2D" parent="HUD/InfoSection"]
 
-[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/PrimaryCurrency"]
+[node name="ColorRect" type="ColorRect" parent="HUD/InfoSection/PrimaryCurrency"]
 anchor_right = 0.136
 anchor_bottom = 0.531
 margin_left = 768.0
@@ -29,9 +37,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SecondaryCurrency" type="Node2D" parent="HUD/Info Section"]
+[node name="PrimaryLabel" type="Label" parent="HUD/InfoSection/PrimaryCurrency/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "
+"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/SecondaryCurrency"]
+[node name="SecondaryCurrency" type="Node2D" parent="HUD/InfoSection"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/InfoSection/SecondaryCurrency"]
 anchor_right = 0.136
 anchor_bottom = 0.531
 margin_left = 800.0
@@ -42,7 +62,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Info" type="ColorRect" parent="HUD/Info Section/SecondaryCurrency"]
+[node name="SecondaryLabel" type="Label" parent="HUD/InfoSection/SecondaryCurrency/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "
+"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="ColorRect" parent="HUD/InfoSection/SecondaryCurrency"]
 anchor_right = 0.136
 anchor_bottom = 0.531
 margin_left = 792.0
@@ -54,9 +86,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Val1" type="Node2D" parent="HUD/Info Section"]
+[node name="Val1" type="Node2D" parent="HUD/InfoSection"]
 
-[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/Val1"]
+[node name="ColorRect" type="ColorRect" parent="HUD/InfoSection/Val1"]
 anchor_right = 0.136
 anchor_bottom = 0.531
 margin_left = 976.0
@@ -67,9 +99,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Val2" type="Node2D" parent="HUD/Info Section"]
+[node name="Val2" type="Node2D" parent="HUD/InfoSection"]
 
-[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/Val2"]
+[node name="ColorRect" type="ColorRect" parent="HUD/InfoSection/Val2"]
 anchor_right = 0.136
 anchor_bottom = 0.531
 margin_left = 832.0
@@ -80,9 +112,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Val3" type="Node2D" parent="HUD/Info Section"]
+[node name="Val3" type="Node2D" parent="HUD/InfoSection"]
 
-[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/Val3"]
+[node name="ColorRect" type="ColorRect" parent="HUD/InfoSection/Val3"]
 anchor_right = 0.136
 anchor_bottom = 0.531
 margin_left = 880.0
@@ -93,9 +125,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Val4" type="Node2D" parent="HUD/Info Section"]
+[node name="Val4" type="Node2D" parent="HUD/InfoSection"]
 
-[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/Val4"]
+[node name="ColorRect" type="ColorRect" parent="HUD/InfoSection/Val4"]
 anchor_right = 0.136
 anchor_bottom = 0.531
 margin_left = 928.0
@@ -106,9 +138,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TotalFuel" type="Node2D" parent="HUD/Info Section"]
+[node name="TotalFuel" type="Node2D" parent="HUD/InfoSection"]
 
-[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/TotalFuel"]
+[node name="ColorRect" type="ColorRect" parent="HUD/InfoSection/TotalFuel"]
 anchor_right = 0.136
 anchor_bottom = 0.531
 margin_left = 864.0
@@ -119,7 +151,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Info" type="ColorRect" parent="HUD/Info Section/TotalFuel"]
+[node name="Info" type="ColorRect" parent="HUD/InfoSection/TotalFuel"]
 anchor_right = 0.136
 anchor_bottom = 0.531
 margin_left = 856.0
@@ -131,27 +163,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ExpBar" type="Node2D" parent="HUD/Info Section"]
-
-[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/ExpBar"]
-anchor_right = 0.136
-anchor_bottom = 0.531
+[node name="ExperienceBar" type="Control" parent="HUD/InfoSection"]
 margin_left = 152.0
-margin_top = 552.0
+margin_top = 512.0
 margin_right = 872.0
 margin_bottom = 576.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Polygon2D" type="Polygon2D" parent="HUD/Info Section/ExpBar"]
-position = Vector2( 485.333, 520 )
+[node name="Polygon2D" type="Polygon2D" parent="HUD/InfoSection/ExperienceBar"]
+position = Vector2( 336, 0 )
 scale = Vector2( 0.416667, 0.5 )
-polygon = PoolVector2Array( 0, 0, 60, 0, 128, 0, 160, 64, -32, 64 )
+polygon = PoolVector2Array( 0, 0, 57.6, 0, 115.2, 0, 153.6, 64, 57.6, 64, -38.3999, 64 )
 
-[node name="SystemBar" type="Node2D" parent="HUD/Info Section"]
+[node name="ColorRect" type="ColorRect" parent="HUD/InfoSection/ExperienceBar"]
+margin_top = 32.0
+margin_right = 720.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ColorRect" type="ColorRect" parent="HUD/Info Section/SystemBar"]
+[node name="SystemBar" type="Node2D" parent="HUD/InfoSection"]
+
+[node name="ColorRect" type="ColorRect" parent="HUD/InfoSection/SystemBar"]
 margin_left = 312.0
 margin_top = 16.0
 margin_right = 712.0
